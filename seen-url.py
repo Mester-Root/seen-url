@@ -166,6 +166,8 @@ for proxy in file:
         else:
             requests.get(url, proxies={'http':'http://'+proxy},timeout=20)
             print(f'\n\033[35m[+] \033[36mavailable \033[92m[proxy] \033[35m=> \033[93m{proxy}')
+    except ProxyError:
+        print ('\n\033[31m[!] \033[35m[ERROR] for proxy *_*')
     except KeyboardError:
         print ('\n\033[31m[!] \033[35mstoped by user \033[31m[U]')
     except:
