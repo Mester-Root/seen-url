@@ -30,7 +30,7 @@ except:
 import time,random
 try:
     import requests
-except importError:
+except ImportError:
     os.system('pip install requests')
     import requests
 try:
