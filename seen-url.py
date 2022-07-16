@@ -26,6 +26,7 @@ except:
         os.system ('cls')
     print ('\n:D [windows-c.m.d.]\n')
 # ......... import ......... 
+# .. ModuleNotFound or importError ..
 import time,random
 try:
     import requests
@@ -39,7 +40,7 @@ except importError:
     import pyuseragents
 try:
     import datetime
-except importError:
+except ModuleNotFound:
     os.system ('pip install datetime')
     import datetime
 try:
@@ -97,7 +98,7 @@ url:str = input('\n\033[35m[?] \033[36murl \033[35m[https://t.me/cd_home/1] \033
 data:str = ''
 print('\n')
 date = (datetime.datetime.today())
-print (f'\n\033[31m[*] \033[20;37mseen to \033[31m=>\033[92m {url} \033[31m|| \033[20;37mmethod \033[31m=> \033[92m{method} \033[31m||\033[20;37m time \033[31m=> \033[92m{date}\n')
+print (f'\n\033[31m[*] \033[20;37mseen to \033[31m=>\033[92m {url} \033[31m|\n\033[20;37mmethod \033[31m=> \033[92m{method} \033[31m|\n\033[20;37m time \033[31m=> \033[92m{date}|\n\033[92mFOR STOP => \033[31mctrl+c\033[93m|\n')
 try:
     file = open(proxi, 'r').read().split()
 except:
@@ -165,6 +166,8 @@ for proxy in file:
         else:
             requests.get(url, proxies={'http':'http://'+proxy},timeout=20)
             print(f'\n\033[35m[+] \033[36mavailable \033[92m[proxy] \033[35m=> \033[93m{proxy}')
+    except KeyboardError:
+        print ('\n\033[31m[!] \033[35mstoped by user \033[31m[U]')
     except:
         print(f'\n\033[31m[!] \033[35mFalse \033[35;37m[proxy] \033[31m=> \033[93m{proxy}')
 #..............the...end................
