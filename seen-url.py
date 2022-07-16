@@ -98,7 +98,14 @@ url:str = input('\n\033[35m[?] \033[36murl \033[35m[https://t.me/cd_home/1] \033
 data:str = ''
 print('\n')
 date = (datetime.datetime.today())
-print (f'\n\033[31m[*] \033[20;37mseen to \033[31m=>\033[92m {url} \033[31m|\n\033[20;37mmethod \033[31m=> \033[92m{method} \033[31m|\n\033[20;37m time \033[31m=> \033[92m{date}|\n\033[92mFOR STOP => \033[31mctrl+c\033[93m|\n')
+print (f'\n\033[31m[*] \033[20;37mseen to \033[31m=>\033[92m {url} \033[93m|')
+time.sleep(0.3)
+print (f'\n\033[31m[*] \033[20;37mmethod  \033[31m=> \033[92m{method} \033[93m|')
+time.sleep(0.3)
+print (f'\n\033[31m[*] \033[20;37mtime   \033[31m=> \033[92m{date}\033[93m|')
+time.sleep(0.4)
+print (f'\n\033[31m[*] \033[20;37mmFOR STOP \033[31m=> \033[35mctrl+c\033[93m|\n')
+time.sleep(0.5)
 try:
     file = open(proxi, 'r').read().split()
 except:
@@ -166,8 +173,6 @@ for proxy in file:
         else:
             requests.get(url, proxies={'http':'http://'+proxy},timeout=20)
             print(f'\n\033[35m[+] \033[36mavailable \033[92m[proxy] \033[35m=> \033[93m{proxy}')
-    except ProxyError:
-        print ('\n\033[31m[!] \033[35m[ERROR] for proxy *_*')
     except KeyboardError:
         print ('\n\033[31m[!] \033[35mstoped by user \033[31m[U]')
     except:
