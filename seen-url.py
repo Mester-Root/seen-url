@@ -175,6 +175,7 @@ for proxy in file:
             print(f'\n\033[35m[+] \033[36mavailable \033[92m[proxy] \033[35m=> \033[93m{proxy}')
     except KeyboardInterrupt:
         print ('\n\033[31m[!] \033[35mstoped by user \033[31m[U]')
+        quit ()
     except:
         print(f'\n\033[31m[!] \033[35mFalse \033[35;37m[proxy] \033[31m=> \033[93m{proxy}')
 #..............the...end................
