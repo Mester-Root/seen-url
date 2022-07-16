@@ -26,7 +26,7 @@ except:
         os.system ('cls')
     print ('\n:D [windows-c.m.d.]\n')
 # ......... import ......... 
-# .. ModuleNotFound or importError ..
+# .. ModuleNotFound or ImportError ..
 import time,random
 try:
     import requests
@@ -35,7 +35,7 @@ except ImportError:
     import requests
 try:
     import pyuseragents
-except importError:
+except ImportError:
     os.system ('pip install pyuseragents')
     import pyuseragents
 try:
