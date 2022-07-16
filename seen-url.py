@@ -104,8 +104,8 @@ print (f'\n\033[31m[*] \033[20;37mmethod  \033[31m=> \033[92m{method} \033[93m|'
 time.sleep(0.3)
 print (f'\n\033[31m[*] \033[20;37mtime   \033[31m=> \033[92m{date}\033[93m|')
 time.sleep(0.4)
-print (f'\n\033[31m[*] \033[20;37mmFOR STOP \033[31m=> \033[35mctrl+c\033[93m|\n')
-time.sleep(0.5)
+print (f'\n\033[31m[*] \033[20;37mfor stop \033[31m=> \033[35mCTRL+C\033[93m|\n\n')
+time.sleep(0.8)
 try:
     file = open(proxi, 'r').read().split()
 except:
@@ -173,7 +173,7 @@ for proxy in file:
         else:
             requests.get(url, proxies={'http':'http://'+proxy},timeout=20)
             print(f'\n\033[35m[+] \033[36mavailable \033[92m[proxy] \033[35m=> \033[93m{proxy}')
-    except KeyboardError:
+    except KeyboardInterrupt:
         print ('\n\033[31m[!] \033[35mstoped by user \033[31m[U]')
     except:
         print(f'\n\033[31m[!] \033[35mFalse \033[35;37m[proxy] \033[31m=> \033[93m{proxy}')
