@@ -167,7 +167,11 @@ for proxy in file:
         elif method == 5:
             req = requests.get(url,proxies={'http':'http://'+proxy})
             hd = {'Host': url, 'user-agent': pyuseragents.random(),'X-Forwarded-For': ip,'headers':req.headers}
+            had = req.headers
+            usr = {'user-agent': pyuseragents.random()}
             requests.get(url, headers=hd, proxies={'http':'http://'+proxy},timeout=20)
+            requests.get(url, headers=had, proxies={'http':'http://'+proxy},timeout=20)
+            requests.get(url, headers=usr, proxies={'http':'http://'+proxy},timeout=20)
             print(f'\n\033[35m[+] \033[36mavailable \033[92m[proxy] \033[35m=> \033[93m{proxy}')
         # 6 Method Or 0 or Else For All Url
         else:
